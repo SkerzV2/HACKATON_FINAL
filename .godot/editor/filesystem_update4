@@ -1,0 +1,3 @@
+res://Scènes/Votre_Scene_Dupliquer.tscn
+res://addons/fmod/FmodManager.gd
+res://addons/fmod/tool/performances/PerformancesDisplay.gd

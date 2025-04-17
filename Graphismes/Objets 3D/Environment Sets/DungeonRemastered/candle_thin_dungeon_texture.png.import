@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clqicxxxeguda"
+uid="uid://b1vay478smt67"
 path.s3tc="res://.godot/imported/candle_thin_dungeon_texture.png-eb36fd1f7b1482bfc0bc660a605da9c9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

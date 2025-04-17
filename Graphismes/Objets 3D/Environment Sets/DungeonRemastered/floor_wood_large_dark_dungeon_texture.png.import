@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct13d2ab4nldp"
+uid="uid://dckyw7lvtr7yh"
 path.s3tc="res://.godot/imported/floor_wood_large_dark_dungeon_texture.png-655978681e6d145c2ef5612e3aa74015.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

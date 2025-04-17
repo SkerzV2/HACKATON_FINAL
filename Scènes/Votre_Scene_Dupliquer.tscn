@@ -1,10 +1,11 @@
-[gd_scene load_steps=84 format=4 uid="uid://xgwbyd3n342l"]
+[gd_scene load_steps=93 format=4 uid="uid://xgwbyd3n342l"]
 
 [ext_resource type="Texture2D" uid="uid://1yiepjdb7qn0" path="res://Importation/47074.jpg" id="1_aj8id"]
 [ext_resource type="PackedScene" uid="uid://bkqhg178vmupd" path="res://Personnages/Joueur/joueur.tscn" id="1_mx2di"]
-[ext_resource type="Texture2D" uid="uid://dcrqybgtlgja0" path="res://Importation/3D Model (GLB)/GLB format/Textures/colormap.png" id="2_aj8id"]
+[ext_resource type="Texture2D" uid="uid://c05motq0pak20" path="res://Importation/3D Model (GLB)/GLB format/Textures/colormap.png" id="2_aj8id"]
 [ext_resource type="PackedScene" uid="uid://cw65hm1yeq4yv" path="res://Scènes/group_presents.tscn" id="2_xhnlu"]
-[ext_resource type="Texture2D" uid="uid://drdbsucma5krj" path="res://Graphismes/Objets 3D/Environment Sets/Restaurant_Bits/restaurantbits_texture.png" id="3_d554s"]
+[ext_resource type="Texture2D" uid="uid://c2fxue158bi8c" path="res://Graphismes/Objets 3D/Environment Sets/Restaurant_Bits/restaurantbits_texture.png" id="3_d554s"]
+[ext_resource type="PackedScene" uid="uid://bgs3a2pi1ptmi" path="res://Graphismes/Objets 3D/Environment Sets/Restaurant_Bits/fridge_A_decorated.gltf" id="4_ni5qy"]
 [ext_resource type="Script" uid="uid://bsdwnv4ayj7x4" path="res://Ne pas toucher/objet_base.gd" id="6_xhnlu"]
 [ext_resource type="AudioStream" uid="uid://xxjs0u6gw76x" path="res://Ne pas toucher/Sons/Monster9_Death10.wav" id="10_a5rjr"]
 [ext_resource type="PackedScene" uid="uid://c6kwssonxiuxi" path="res://Scènes/sapin.tscn" id="10_xhnlu"]
@@ -320,6 +321,182 @@ shadow_mesh = SubResource("ArrayMesh_uheke")
 [sub_resource type="BoxShape3D" id="BoxShape3D_t2p8f"]
 size = Vector3(1.94302, 2.41583, 1.95673)
 
+[sub_resource type="Animation" id="Animation_ni5qy"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fridge_A_door_bottom:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.96706, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fridge_A_door_top:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.53073, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_agmcc"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fridge_A_door_bottom:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.96706, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fridge_A_door_top:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.53073, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n57e7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fridge_A_door_bottom:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fridge_A_door_top:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rix6u"]
+_data = {
+&"RESET": SubResource("Animation_n57e7"),
+&"close": SubResource("Animation_agmcc"),
+&"open": SubResource("Animation_ni5qy")
+}
+
+[sub_resource type="Animation" id="Animation_a5rjr"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fridge_A_decorated/fridge_A_decorated_door_bottom:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.96706, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fridge_A_decorated/fridge_A_decorated_door_top:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.53073, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t2p8f"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fridge_A_decorated/fridge_A_decorated_door_bottom:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.96706, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fridge_A_decorated/fridge_A_decorated_door_top:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.53073, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aob3m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fridge_A_decorated/fridge_A_decorated_door_bottom:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fridge_A_decorated/fridge_A_decorated_door_top:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gtx0h"]
+_data = {
+&"RESET": SubResource("Animation_aob3m"),
+&"close": SubResource("Animation_t2p8f"),
+&"open": SubResource("Animation_a5rjr")
+}
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m244r"]
 resource_name = "colormap"
 cull_mode = 2
@@ -551,16 +728,6 @@ shadow_mesh = SubResource("ArrayMesh_n57e7")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d554s"]
 points = PackedVector3Array(0, 0, -0.075, 0.5, 0, -0.075, 0, 0, 0.075, 0, 0.8, -0.075, 0.5, 0, 0.075, 0.5, 0.8, -0.075, 0, 0.8, 0.075, 0.5, 0.8, 0.075)
 
-[sub_resource type="Animation" id="Animation_vqn22"]
-resource_name = "open"
-tracks/0/type = "rotation_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("cabin-door-rotate/door")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 1.9377e-16, 0, -1, 0.0333333, 1, 0, 0.0962148, 0, -0.995361, 0.0666667, 1, 0, 0.246814, 0, -0.969063, 0.1, 1, 0, 0.349249, 0, -0.93703, 0.133333, 1, 0, 0.437937, 0, -0.899005, 0.166667, 1, 0, 0.51372, 0, -0.857958, 0.2, 1, 0, 0.577717, 0, -0.816237, 0.233333, 1, 0, 0.631176, 0, -0.77564, 0.266667, 1, 0, 0.675364, 0, -0.737484, 0.3, 1, 0, 0.711494, 0, -0.702692, 0.333333, 1, 0, 0.740681, 0, -0.671857, 0.366667, 1, 0, 0.763921, 0, -0.64531, 0.4, 1, 0, 0.78208, 0, -0.623179, 0.433333, 1, 0, 0.795901, 0, -0.605427, 0.466667, 1, 0, 0.806014, 0, -0.591897, 0.5, 1, 0, 0.812947, 0, -0.582338, 0.533333, 1, 0, 0.817148, 0, -0.576428, 0.566667, 1, 0, 0.818997, 0, -0.573798, 0.6, 1, 0, 0.818827, 0, -0.57404, 0.633333, 1, 0, 0.816939, 0, -0.576725, 0.666667, 1, 0, 0.813612, 0, -0.581409, 0.7, 1, 0, 0.809119, 0, -0.587644, 0.733333, 1, 0, 0.803738, 0, -0.594983, 0.766667, 1, 0, 0.797753, 0, -0.602984, 0.8, 1, 0, 0.791464, 0, -0.611216, 0.833333, 1, 0, 0.785187, 0, -0.619259, 0.866667, 1, 0, 0.779254, 0, -0.626708, 0.9, 1, 0, 0.774014, 0, -0.633169, 0.933333, 1, 0, 0.769824, 0, -0.638256, 0.966667, 1, 0, 0.767938, 0, -0.640525, 1, 1, 0, 0.766044, 0, -0.642788)
-
 [sub_resource type="Animation" id="Animation_hbh5f"]
 resource_name = "close"
 tracks/0/type = "rotation_3d"
@@ -570,6 +737,16 @@ tracks/0/path = NodePath("cabin-door-rotate/door")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.766044, 0, -0.642788, 0.0333333, 1, 0, 0.761311, 0, -0.648388, 0.0666667, 1, 0, 0.746864, 0, -0.664977, 0.1, 1, 0, 0.721987, 0, -0.691907, 0.133333, 1, 0, 0.685536, 0, -0.728039, 0.166667, 1, 0, 0.636031, 0, -0.771663, 0.2, 1, 0, 0.571788, 0, -0.820401, 0.233333, 1, 0, 0.491104, 0, -0.871101, 0.266667, 1, 0, 0.392515, 0, -0.919745, 0.3, 1, 0, 0.259346, 0, -0.965785, 0.333333, 1, 0, 0.138933, 0, -0.990302, 0.366667, 1, 0, 0.0861897, 0, -0.996279, 0.4, 1, 0, 0.0784592, 0, -0.996917, 0.433333, 1, 0, 0.121268, 0, -0.99262, 0.466667, 1, 0, 0.176273, 0, -0.984341, 0.5, 1, 0, 0.203108, 0, -0.979156, 0.533333, 1, 0, 0.215493, 0, -0.976505, 0.566667, 1, 0, 0.21354, 0, -0.976934, 0.6, 1, 0, 0.19723, 0, -0.980357, 0.633333, 1, 0, 0.165077, 0, -0.986281, 0.666667, 1, 0, 0.120907, 0, -0.992664, 0.7, 1, 0, 0.0564206, 0, -0.998407, 0.733333, 1, 0, 0.00702975, 0, -0.999975, 0.766667, 1, 0, 0.0233901, 0, -0.999726, 0.8, 1, 0, 0.0523359, 0, -0.99863, 0.833333, 1, 0, 0.0502782, 0, -0.998735, 0.866667, 1, 0, 0.0390176, 0, -0.999239, 0.9, 1, 0, 0.0246775, 0, -0.999696, 0.933333, 1, 0, 0.0106657, 0, -0.999943, 0.966667, 1, 0, 0.00533293, 0, -0.999986, 1, 1, 0, 0, 0, -1)
+
+[sub_resource type="Animation" id="Animation_vqn22"]
+resource_name = "open"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("cabin-door-rotate/door")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1.9377e-16, 0, -1, 0.0333333, 1, 0, 0.0962148, 0, -0.995361, 0.0666667, 1, 0, 0.246814, 0, -0.969063, 0.1, 1, 0, 0.349249, 0, -0.93703, 0.133333, 1, 0, 0.437937, 0, -0.899005, 0.166667, 1, 0, 0.51372, 0, -0.857958, 0.2, 1, 0, 0.577717, 0, -0.816237, 0.233333, 1, 0, 0.631176, 0, -0.77564, 0.266667, 1, 0, 0.675364, 0, -0.737484, 0.3, 1, 0, 0.711494, 0, -0.702692, 0.333333, 1, 0, 0.740681, 0, -0.671857, 0.366667, 1, 0, 0.763921, 0, -0.64531, 0.4, 1, 0, 0.78208, 0, -0.623179, 0.433333, 1, 0, 0.795901, 0, -0.605427, 0.466667, 1, 0, 0.806014, 0, -0.591897, 0.5, 1, 0, 0.812947, 0, -0.582338, 0.533333, 1, 0, 0.817148, 0, -0.576428, 0.566667, 1, 0, 0.818997, 0, -0.573798, 0.6, 1, 0, 0.818827, 0, -0.57404, 0.633333, 1, 0, 0.816939, 0, -0.576725, 0.666667, 1, 0, 0.813612, 0, -0.581409, 0.7, 1, 0, 0.809119, 0, -0.587644, 0.733333, 1, 0, 0.803738, 0, -0.594983, 0.766667, 1, 0, 0.797753, 0, -0.602984, 0.8, 1, 0, 0.791464, 0, -0.611216, 0.833333, 1, 0, 0.785187, 0, -0.619259, 0.866667, 1, 0, 0.779254, 0, -0.626708, 0.9, 1, 0, 0.774014, 0, -0.633169, 0.933333, 1, 0, 0.769824, 0, -0.638256, 0.966667, 1, 0, 0.767938, 0, -0.640525, 1, 1, 0, 0.766044, 0, -0.642788)
 
 [sub_resource type="Animation" id="Animation_w26wv"]
 resource_name = "open-and-close"
@@ -1752,9 +1929,10 @@ shape = SubResource("ConvexPolygonShape3D_a5rjr")
 [node name="Objectifs" type="Node3D" parent="Map"]
 
 [node name="Frigidaire" type="Node3D" parent="Map/Objectifs"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12, 0, 46)
+transform = Transform3D(-0.999208, 0, -0.0398005, 0, 1, 0, 0.0398005, 0, -0.999208, 1.47068, 0, 46.4591)
 
 [node name="fridge_A" type="MeshInstance3D" parent="Map/Objectifs/Frigidaire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0608432, 0)
 mesh = SubResource("ArrayMesh_1p6e4")
 skeleton = NodePath("")
 
@@ -1774,13 +1952,35 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0275421, 1.267, -0.000518799)
 shape = SubResource("BoxShape3D_t2p8f")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Map/Objectifs/Frigidaire/fridge_A"]
+libraries = {
+&"": SubResource("AnimationLibrary_rix6u")
+}
+
+[node name="fridge_A_decorated2" parent="Map/Objectifs/Frigidaire" instance=ExtResource("4_ni5qy")]
+transform = Transform3D(0.999445, 0, -0.0332946, 0, 1, 0, 0.0332946, 0, 0.999445, 4.83279, 0.0500007, 0.112476)
+
+[node name="fridge_A_decorated" parent="Map/Objectifs/Frigidaire/fridge_A_decorated2" index="0"]
+transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, -4.65661e-10, 0, 1, -4.79597, 0, -0.0312233)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Map/Objectifs/Frigidaire/fridge_A_decorated2"]
+libraries = {
+&"": SubResource("AnimationLibrary_gtx0h")
+}
+
 [node name="Tas de Cadeaux" type="Node3D" parent="Map/Objectifs"]
 
 [node name="group_presents" parent="Map/Objectifs/Tas de Cadeaux" instance=ExtResource("2_xhnlu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, -16)
 
+[node name="CollisionShape3D" parent="Map/Objectifs/Tas de Cadeaux/group_presents/Area3D" index="0"]
+transform = Transform3D(0.999048, 0, 0.0436194, 0, 3, 0, -0.0436194, 0, 0.999048, 0.04, 0, -0.465)
+
 [node name="group_presents2" parent="Map/Objectifs/Tas de Cadeaux" instance=ExtResource("2_xhnlu")]
 transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 6, 0, -14)
+
+[node name="CollisionShape3D" parent="Map/Objectifs/Tas de Cadeaux/group_presents2/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0.03, 0, 0.34)
 
 [node name="Portes" type="Node3D" parent="."]
 
@@ -1974,3 +2174,7 @@ transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 29.359
 
 [node name="Sockett11" parent="." instance=ExtResource("13_n57e7")]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 29.1844, 2.05, 32.819)
+
+[editable path="Map/Objectifs/Frigidaire/fridge_A_decorated2"]
+[editable path="Map/Objectifs/Tas de Cadeaux/group_presents"]
+[editable path="Map/Objectifs/Tas de Cadeaux/group_presents2"]
